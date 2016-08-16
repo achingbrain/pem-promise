@@ -1,0 +1,5 @@
+node_modules
+*.heapsnapshot
+.nyc_output
+coverage
+*.log

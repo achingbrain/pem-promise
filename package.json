@@ -1,0 +1,48 @@
+{
+  "name": "pem-promise",
+  "version": "0.0.0",
+  "description": "The pem module wrapped in a promises API",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava --verbose",
+    "test:coverage": "nyc --reporter=html ava",
+    "test:coverage:check": "nyc --reporter=lcov ava && nyc check-coverage --lines 100 --functions 100 --branches 100",
+    "lint": "standard",
+    "coveralls": "cat ./coverage/lcov.info | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/achingbrain/pem-promise.git"
+  },
+  "author": "Alex Potsides",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/achingbrain/pem-promise/issues"
+  },
+  "homepage": "https://github.com/achingbrain/pem-promise#readme",
+  "keywords": [
+    "pem",
+    "promise",
+    "ssl",
+    "certificates",
+    "generate"
+  ],
+  "dependencies": {
+    "es6-promisify": "^4.1.0",
+    "pem": "^1.8.3"
+  },
+  "devDependencies": {
+    "ava": "^0.16.0",
+    "coveralls": "^2.11.12",
+    "fs-promise": "^0.5.0",
+    "nyc": "^8.1.0",
+    "pre-commit": "^1.1.3",
+    "proxyquire": "^1.7.10",
+    "sinon": "^1.17.5",
+    "standard": "^7.1.2"
+  },
+  "pre-commit": [
+    "test:coverage:check",
+    "lint"
+  ]
+}
